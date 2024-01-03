@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+ *
+ {
+   text-transform: capitalize; 
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Courier New', Courier, monospace;
+ }
+
+ .pointer
+ {
+cursor: pointer;
+ }
+
+ .bg-img {
+  background-image: url(assets/img/quran.jpg);
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  color: white; 
+} 
+hr{
+  color: #5cb85c;
+}
