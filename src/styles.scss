@@ -16,11 +16,31 @@ cursor: pointer;
  .bg-img {
   background-image: url(assets/img/quran.jpg);
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-position: center;
   background-size: cover;
   color: white; 
 } 
-hr{
-  color: #5cb85c;
+
+
+hr 
+{
+    color:#764d34 ;
+}
+
+
+.hover
+{
+    transition: all .3s;
+    color: #764d34;
+    &:hover
+    {
+        color: white;
+        background-color :#764d34 ;
+    }
+}
+
+.rtl
+{
+    direction: rtl;
 }

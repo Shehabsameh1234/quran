@@ -1,0 +1,32 @@
+.text-color {
+    color: #764d34;
+}
+
+h5 {
+    line-height: 50px;
+}
+
+span {
+    border: #764d34;
+    color: white;
+    width: 50%;
+    height: 50%;
+    padding: 5px;
+    border-radius: 5%;
+    background-color: #764d34;
+}
+
+
+.pos {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+}
+
+
+@media (min-width: 0px) and (max-width:400px) {
+    .pos {
+        width: 70%;
+    }
+}

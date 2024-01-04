@@ -1,3 +1,18 @@
-<section class="container p-5 mt-5">
-     ipsum  sit amet, consectetur adipisicing elit. Officia suscipit reiciendis, consectetur eveniet distinctio ducimus, laboriosam odit explicabo repellendus quod assumenda debitis veniam? Esse harum dolores suscipit doloremque veritatis possimus!
+<section class=" bg-img">
+
+    <section class="container shadow bg-light px-3 py-5 mt-5 ">
+
+        <h2 class="text-muted text-center">بِسْمِ ٱللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h2>
+
+        <h3 class="my-5 text-muted">Read the Quran by Juz :</h3>
+        <hr>
+
+        <div >
+            <div class="row text-center">
+                <div *ngFor="let item of [].constructor(30); let i = index" class="col-md-2 col-4   ">
+                   <h3 class=" m-2  hover  p-2 pointer">juz {{i+1}} </h3>
+                </div>
+            </div>
+        </div>
+    </section>
 </section>
