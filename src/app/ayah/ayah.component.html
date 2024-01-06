@@ -4,56 +4,40 @@
 
         <h2 class="text-muted text-center">بِسْمِ ٱللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h2>
 
-        <h3 class="my-5 text-muted">Surah An-Noor Ayah 35 (24:35)</h3>
+        <h3 class="my-5 text-muted">Surah {{surahNameInEnglish}} Ayah {{numberOfAyah}}
+            ({{surahNumber}}:{{numberOfAyah}})</h3>
         <hr>
 
-        <h5 class="rtl text-color">۞ ٱللَّهُ نُورُ ٱلسَّمَـٰوَ ٰ⁠تِ وَٱلۡأَرۡضِۚ مَثَلُ نُورِهِۦ كَمِشۡكَوٰةࣲ فِیهَا
-            مِصۡبَاحٌۖ
-            ٱلۡمِصۡبَاحُ فِی زُجَاجَةٍۖ ٱلزُّجَاجَةُ كَأَنَّهَا كَوۡكَبࣱ دُرِّیࣱّ یُوقَدُ مِن شَجَرَةࣲ مُّبَـٰرَكَةࣲ
-            زَیۡتُونَةࣲ لَّا شَرۡقِیَّةࣲ وَلَا غَرۡبِیَّةࣲ یَكَادُ زَیۡتُهَا یُضِیۤءُ وَلَوۡ لَمۡ تَمۡسَسۡهُ نَارࣱۚ
-            نُّورٌ عَلَىٰ نُورࣲۚ یَهۡدِی ٱللَّهُ لِنُورِهِۦ مَن یَشَاۤءُۚ وَیَضۡرِبُ ٱللَّهُ ٱلۡأَمۡثَـٰلَ لِلنَّاسِۗ
-            وَٱللَّهُ بِكُلِّ شَیۡءٍ عَلِیمࣱ <span>35</span></h5>
+        <h5 class="rtl text-color">{{ayahText}}<span>{{numberOfAyah}}</span></h5>
 
         <div class="d-flex justify-content-between my-5">
-            <div class="text-color"><span>24:35 An-Noor</span></div>
-            <div class="text-color"><span class="rtl">٢٤:٣٥ سُورَةُ النُّورِ</span></div>
+            <div class="text-color"><span> {{surahNumber}}:{{numberOfAyah}} {{surahNameInEnglish}}</span></div>
+            <div class="text-color"><span class="rtl">{{surahNameInArabic}} {{surahNumber}}:{{numberOfAyah}} </span>
+            </div>
         </div>
         <hr>
-
-
-
-
         <footer class="text-color fixed-bottom bottom-0 text-center">
-
-
             <div class="bg-light h-75 w-100 p-1">
-
                 <div class=" row d-flex justify-content-around">
-
-                    <div class="col-md-6 col-12 mb-3">
-                        <div class="input-group mt-2 pos">
-                            <input type="text" class="form-control " placeholder="ayah reference"
-                                aria-label="ayah reference" aria-describedby="button-addon2">
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">go</button>
-                        </div>
+                    <div class="col-md-6 col-12 mb-3 ">
+                        <form class="input-group mt-2 pos " (ngSubmit)="getAyah(getAyahForm)" [formGroup]="getAyahForm">
+                            <input type="text" class="form-control  " placeholder="surah number"
+                                aria-label="ayah reference" aria-describedby="button-addon2"
+                                formControlName="surahNumber">
+                            <input type="text" class="form-control " placeholder="ayah number "
+                                aria-label="ayah reference" aria-describedby="button-addon2"
+                                formControlName="ayahNumber">
+                            <button type="submit" [disabled]="getAyahForm.invalid"
+                                class="btn btn-outline-secondary">go</button>
+                        </form>
                     </div>
 
                     <div class="col-md-6 col-12">
-                        <audio controls>
-                            <source src="horse.ogg" type="audio/ogg">
-                            <source src="horse.mp3" type="audio/mpeg">
-                          </audio>
+                        <button class="btn btn-outline-success mt-2 me-2" (click)="playSound()">play sound</button>
+                        <button class="btn btn-outline-danger mt-2" (click)="pauseSound()">pause sound</button>
                     </div>
-
                 </div>
-
             </div>
-
-
         </footer>
-
-
-
-
     </section>
 </section>

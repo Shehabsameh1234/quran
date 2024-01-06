@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { JuzComponent } from './juz/juz.component';
 import { SurahComponent } from './surah/surah.component';
 import { AyahComponent } from './ayah/ayah.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,10 @@ import { AyahComponent } from './ayah/ayah.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
