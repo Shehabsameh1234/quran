@@ -25,6 +25,7 @@ span {
 
 
 }
+
 @media (min-width: 0px) and (max-width:500px) {
     .pos {
         width: 90%;
@@ -34,10 +35,22 @@ span {
         font-size: 12px;
     }
 }
+
 .form-control:focus {
     color: #764d34;
     background-color: white;
     border-color: #764d34;
     outline: 0;
     box-shadow: 0 0 0 .25rem transparent
+}
+
+.btn-outline-brown {
+    border: solid 1px #764d34;
+    transition: all .3s;
+
+    &:hover {
+        background-color: #764d34;
+        color: white;
+    }
+
 }

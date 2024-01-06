@@ -34,6 +34,7 @@ export class AyahComponent {
         this.surahNameInEnglish = res.data.surah.englishName
         this.surahNumber = res.data.surah.number
         this.audio = res.data.number
+        this.pauseSound()
       },
       error: (error) => { console.log(error) },
     })
