@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { GetAyahService } from '../get-ayah.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { BehaviorSubject } from 'rxjs';
+
 
 @Component({
   selector: 'app-ayah',
@@ -18,7 +18,6 @@ export class AyahComponent {
   surahNameInEnglish: string = "Al-Baqara"
   surahNumber: number = 2
   audio: number = 262
-  audio1 = new Audio();
   constructor(private _GetAyahService: GetAyahService) {
   }
   changeAudioSource() {
@@ -39,7 +38,6 @@ export class AyahComponent {
         this.surahNameInEnglish = res.data.surah.englishName
         this.surahNumber = res.data.surah.number
         this.audio = res.data.number
-        // this.pauseSound()
         this.audioSources = [`https://cdn.islamic.network/quran/audio/128/ar.alafasy/${res.data.number}.mp3`]
         this.changeAudioSource()
 

@@ -1,0 +1,56 @@
+.text-color {
+    color: #764d34;
+}
+
+h5 {
+    line-height: 50px;
+}
+
+span {
+    border: #764d34;
+    color: white;
+    width: 50%;
+    height: 50%;
+    padding: 5px;
+    border-radius: 5%;
+    background-color: #764d34;
+}
+
+
+.pos {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+
+
+}
+
+@media (min-width: 0px) and (max-width:500px) {
+    .pos {
+        width: 90%;
+    }
+
+    ::placeholder {
+        font-size: 12px;
+    }
+}
+
+.form-control:focus {
+    color: #764d34;
+    background-color: white;
+    border-color: #764d34;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem transparent
+}
+
+.btn-outline-brown {
+    border: solid 1px #764d34;
+    transition: all .3s;
+
+    &:hover {
+        background-color: #764d34;
+        color: white;
+    }
+
+}

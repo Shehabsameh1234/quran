@@ -4,12 +4,14 @@ import { HomeComponent } from './home/home.component';
 import { JuzComponent } from './juz/juz.component';
 import { SurahComponent } from './surah/surah.component';
 import { AyahComponent } from './ayah/ayah.component';
+import { SurahDataComponent } from './surah-data/surah-data.component';
 
 const routes: Routes = [
   {path:"home",component:HomeComponent},
   {path:"juz",component:JuzComponent},
   {path:"surah",component:SurahComponent},
   {path:"ayah",component:AyahComponent},
+  {path:"surahData/:number",component:SurahDataComponent},
   {path:"**",component:HomeComponent},
 ];
 

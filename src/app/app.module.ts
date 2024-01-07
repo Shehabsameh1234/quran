@@ -10,6 +10,7 @@ import { SurahComponent } from './surah/surah.component';
 import { AyahComponent } from './ayah/ayah.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SurahDataComponent } from './surah-data/surah-data.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     JuzComponent,
     SurahComponent,
-    AyahComponent
+    AyahComponent,
+    SurahDataComponent
   ],
   imports: [
     BrowserModule,
