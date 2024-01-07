@@ -10,8 +10,9 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AyahComponent {
 
+  audioSources: string[] = ['https://cdn.islamic.network/quran/audio/128/ar.alafasy/262.mp3']; // Add your audio sources here
+  currentSource: string = this.audioSources[0];
   ayahText: string = `اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ`
-
   numberOfAyah: number = 255
   surahNameInArabic: string = "سُورَةُ البَقَرَةِ"
   surahNameInEnglish: string = "Al-Baqara"
@@ -20,11 +21,15 @@ export class AyahComponent {
   audio1 = new Audio();
   constructor(private _GetAyahService: GetAyahService) {
   }
+  changeAudioSource() {
+    this.currentSource = this.audioSources[0];
+  }
   getAyahForm: FormGroup = new FormGroup({
     surahNumber: new FormControl(null, [Validators.required]),
     ayahNumber: new FormControl(null, [Validators.required])
   })
   getAyah(getAyahForm1: FormGroup) {
+
     this._GetAyahService.getAyah(getAyahForm1.value.surahNumber, getAyahForm1.value.ayahNumber).subscribe({
       next: (res) => {
         console.log(res.data.number);
@@ -34,18 +39,13 @@ export class AyahComponent {
         this.surahNameInEnglish = res.data.surah.englishName
         this.surahNumber = res.data.surah.number
         this.audio = res.data.number
-        this.pauseSound()
+        // this.pauseSound()
+        this.audioSources = [`https://cdn.islamic.network/quran/audio/128/ar.alafasy/${res.data.number}.mp3`]
+        this.changeAudioSource()
+
       },
       error: (error) => { console.log(error) },
     })
-  }
-  playSound() {
-    this.audio1.src = `https://cdn.islamic.network/quran/audio/128/ar.alafasy/${this.audio}.mp3`
-    this.audio1.load();
-    this.audio1.play()
-  }
-  pauseSound() {
-    this.audio1.pause()
   }
 
 }
