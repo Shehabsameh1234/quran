@@ -28,7 +28,7 @@
         <hr>
         <footer class="text-color fixed-bottom bottom-0 text-center">
             <div class="bg-light h-75 w-100 p-1">
-                <audio class="mt-2" controls [src]=""></audio>
+                <audio #myAudioElement muted  [autoplay]="autoplayEnabled" class="mt-2" controls [src]="ayahAudio"></audio>
             </div>
         </footer>
     </section>

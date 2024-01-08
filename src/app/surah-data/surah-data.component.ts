@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, } from '@angular/core';
 import { SurahDataService } from '../surah-data.service';
 import { ActivatedRoute } from '@angular/router';
 import { AyahData } from '../surah-data-and-text'
@@ -9,9 +9,8 @@ import { AyahData } from '../surah-data-and-text'
   styleUrls: ['./surah-data.component.scss']
 })
 export class SurahDataComponent {
-  // @ViewChild('myAudioElement') myAudioElement!: ElementRef;
+
   ayahData!: AyahData[];
-  // ayahAudio!: AyahData[];
   ayahAudio!:string[];
   ayahNumberForApi!: number;
   surahNameInEnglish!: string;
@@ -39,17 +38,5 @@ export class SurahDataComponent {
   }
 
 
-//   ngAfterViewInit(): void {
-//     const audio = this.myAudioElement.nativeElement;
-//     audio.addEventListener('ended', () => {
-//       this.i++
-      
-//       this._SurahDataService.getAyahData(this.ayahNumberForApi).subscribe({
-//         next: (res) => {
-//           this.ayahAudio = res.data.ayahs[this.i].audio
-//           if(this.i==res.data.ayahs.length-1){this.i=-1}
-//         }
-//       })
-//     });
-//   }
+
 }
