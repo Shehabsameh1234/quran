@@ -1,6 +1,6 @@
 
-h5 {
-    line-height: 50px;
+h3{
+    line-height: 60px;
 }
 
 
@@ -11,8 +11,6 @@ h5 {
     left: 50%;
     transform: translateX(-50%);
     width: 50%;
-
-
 }
 
 @media (min-width: 0px) and (max-width:500px) {
@@ -23,6 +21,10 @@ h5 {
     ::placeholder {
         font-size: 12px;
     }
+    .margin{
+        margin-bottom: 180px;
+    }
+    
 }
 @media (min-width: 501px) and (max-width:1000px) {
     .pos {

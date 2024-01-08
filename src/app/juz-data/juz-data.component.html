@@ -1,25 +1,27 @@
 <section class=" bg-img">
 
+    <div class="pos container shadow">
+        <div class="row  text-color mb-4 py-3    pos">
+            <div class="col-md-6 col-12 text-start">juz {{juzNumber}}</div>
+            <div class="col-md-6 col-12 text-end rlt"> الجزء {{juzNumber}} </div>
+        </div>
+    </div>
+
     <section class="container shadow bg-light px-3 py-4 mt-5 ">
 
 
-        <div class="row  text-color mb-4    pos">
-            <div class="col-md-6 col-12 text-start">juz {{juzNumber}}</div>
 
-            <div class="col-md-6 col-12 text-end rlt"> الجزء {{juzNumber}} </div>
 
-        </div>
-
-        <h2 class="text-muted text-center ">بِسْمِ ٱللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h2>
+        <h2 class="text-muted text-center mt-5 ">بِسْمِ ٱللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h2>
 
         <h3 class="my-5 text-muted"></h3>
         <hr>
 
-        <h5 *ngFor="let item of ayahjuzData" class="rtl  text-color">
+        <h3 *ngFor="let item of ayahjuzData" class="rtl  text-color">
             {{item.text}}
             <span>{{item.numberInSurah}}</span>
             <p class="tex-color text-start ">{{item.surah.name}}</p>
-        </h5>
+        </h3>
         <br>
         <br>
         <br>
