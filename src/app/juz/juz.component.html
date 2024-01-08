@@ -9,8 +9,8 @@
 
         <div >
             <div class="row text-center">
-                <div *ngFor="let item of [].constructor(30); let i = index" class="col-md-2 col-4   ">
-                   <h3 class=" m-2  hover  p-2 pointer">juz {{i+1}} </h3>
+                <div  *ngFor="let item of [].constructor(30); let i = index" class="col-md-2 col-4   ">
+                   <h3 [routerLink]="['/juzData',i+1]" class=" m-2  hover  p-2 pointer">juz {{i+1}} </h3>
                 </div>
             </div>
         </div>
