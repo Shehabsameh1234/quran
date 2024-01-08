@@ -18,6 +18,8 @@ export class SurahComponent {
     this._GetSurahService.getSurah().subscribe({
       next: (res) => {
         this.allSurahsName = res.data
+       
+        
       },
 
       error: (error) => { console.log(error) }

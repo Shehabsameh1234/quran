@@ -10,9 +10,10 @@
         <h2 class="text-muted text-center  mt-5">بِسْمِ ٱللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h2>
         <hr>
 
-        <h3 *ngFor="let item of ayahData" class=" rtl  text-color  ">
+        <h3 *ngFor="let item of ayahData " class=" rtl  text-color  ">
             {{item.text}}
-            <span>{{item.numberInSurah}}</span>
+            <span class="ms-3">{{item.numberInSurah}}</span>
+            <i class="fa-solid fa-magnifying-glass-plus pointer" [routerLink]="['/ayah',item.number,item.numberInSurah,surahNumber]"></i>
         </h3>
         <br>
         <br>

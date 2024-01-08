@@ -15,6 +15,7 @@ export class SurahDataComponent {
   ayahNumberForApi!: number;
   surahNameInEnglish!: string;
   ayahName!: string;
+  surahNumber!:number
   englishNameTranslation!: string;
   i: number = 0
   constructor(private _SurahDataService: SurahDataService, private _ActivatedRoute: ActivatedRoute) { }
@@ -23,6 +24,9 @@ export class SurahDataComponent {
     this.ayahNumberForApi = this._ActivatedRoute.snapshot.params['number']
     this._SurahDataService.getAyahData(this.ayahNumberForApi).subscribe({
       next: (res) => {
+       
+       this.surahNumber=res.data.number
+        
         this.ayahData = res.data.ayahs
         this.surahNameInEnglish = res.data.englishName
         this.ayahName = res.data.name

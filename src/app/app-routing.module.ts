@@ -14,6 +14,7 @@ const routes: Routes = [
   {path:"ayah",component:AyahComponent},
   {path:"surahData/:number",component:SurahDataComponent},
   {path:"juzData/:number",component:JuzDataComponent},
+  {path:"ayah/:number/:numberInSurah/:numberOfSurah",component:AyahComponent},
   {path:"**",component:HomeComponent},
 ];
 

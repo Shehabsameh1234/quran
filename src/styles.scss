@@ -5,14 +5,12 @@
    margin: 0;
    padding: 0;
    box-sizing: border-box;
-   font-family: 'Courier New', Courier, monospace;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
  }
-
  .pointer
  {
 cursor: pointer;
  }
-
  .bg-img {
   background-image: url(assets/img/quran.jpg);
   width: 100%;
@@ -28,8 +26,6 @@ hr
     color:#764d34 ;
    
 }
-
-
 .hover
 {
     transition: all .3s;
@@ -58,5 +54,6 @@ span {
     height: 50%;
     padding: 5px;
     border-radius: 5%;
+   
     background-color: #764d34;
 }

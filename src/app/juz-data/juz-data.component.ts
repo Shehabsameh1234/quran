@@ -2,10 +2,6 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { JuzDataService } from '../juz-data.service';
 import { ActivatedRoute } from '@angular/router';
 import { Ayah } from '../juz-data'
-
-
-
-
 @Component({
   selector: 'app-juz-data',
   templateUrl: './juz-data.component.html',
@@ -21,9 +17,7 @@ export class JuzDataComponent {
   i: number = 0;
   autoplayEnabled: boolean = false;
 
-
   constructor(private _JuzDataService: JuzDataService, private _ActivatedRoute: ActivatedRoute) { }
-
   ngOnInit(): void {
     this._JuzDataService.getJuzData(this.juzNumberFroApi).subscribe(
       {
@@ -56,8 +50,12 @@ export class JuzDataComponent {
       )
     });
   }
-
-  
+  playByPlayIcon(numberOIndex:number,numberOfAyah:number)
+  {
+    this.i=numberOIndex
+    this.ayahAudio = `https://cdn.islamic.network/quran/audio/64/ar.alafasy/${numberOfAyah}.mp3`
+    this.autoplayEnabled=true
+  }
 
  
 

@@ -1,26 +1,26 @@
 <section class=" bg-img">
-
     <div class="pos container shadow">
         <div class="row  text-color mb-4 py-3    pos">
             <div class="col-md-6 col-12 text-start">juz {{juzNumber}}</div>
             <div class="col-md-6 col-12 text-end rlt"> الجزء {{juzNumber}} </div>
         </div>
     </div>
-
     <section class="container shadow bg-light px-3 py-4 mt-5 ">
-
-
-
-
         <h2 class="text-muted text-center mt-5 ">بِسْمِ ٱللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h2>
-
         <h3 class="my-5 text-muted"></h3>
         <hr>
-
-        <h3 *ngFor="let item of ayahjuzData" class="rtl  text-color">
+        <h3 *ngFor="let item of ayahjuzData let i=index" class="rtl  text-color">
             {{item.text}}
             <span>{{item.numberInSurah}}</span>
-            <p class="tex-color text-start ">{{item.surah.name}}</p>
+            <div class="tex-color text-start fontSize ">
+                <span>{{item.surah.name}}</span>
+                <div class="pointer " (click)="playByPlayIcon(i,item.number)">
+                    <span>
+                        <i class="fa-solid fa-play "></i>
+                        play
+                    </span>
+                </div>
+            </div>
         </h3>
         <br>
         <br>
@@ -28,7 +28,8 @@
         <hr>
         <footer class="text-color fixed-bottom bottom-0 text-center">
             <div class="bg-light h-75 w-100 p-1">
-                <audio #myAudioElement muted  [autoplay]="autoplayEnabled" class="mt-2" controls [src]="ayahAudio"></audio>
+                <audio #myAudioElement muted [autoplay]="autoplayEnabled" class="mt-2" controls
+                    [src]="ayahAudio"></audio>
             </div>
         </footer>
     </section>
