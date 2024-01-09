@@ -31,8 +31,7 @@ h3 {
         font-size: 14px;
     }
 }
-
-.form-control:focus {
+.form-control:focus  ,.form-select:focus {
     color: #764d34;
     background-color: white;
     border-color: #764d34;
