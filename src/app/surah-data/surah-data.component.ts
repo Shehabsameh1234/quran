@@ -19,14 +19,11 @@ export class SurahDataComponent {
   englishNameTranslation!: string;
   i: number = 0
   constructor(private _SurahDataService: SurahDataService, private _ActivatedRoute: ActivatedRoute) { }
-
   ngOnInit(): void {
     this.ayahNumberForApi = this._ActivatedRoute.snapshot.params['number']
     this._SurahDataService.getAyahData(this.ayahNumberForApi).subscribe({
       next: (res) => {
-       
        this.surahNumber=res.data.number
-        
         this.ayahData = res.data.ayahs
         this.surahNameInEnglish = res.data.englishName
         this.ayahName = res.data.name
@@ -35,12 +32,8 @@ export class SurahDataComponent {
         this.ayahAudio=[`https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/${this.ayahNumberForApi}.mp3`]
       },
       error: (error) => {
-        location.reload()
       },
     })
 
   }
-
-
-
 }

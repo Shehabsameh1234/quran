@@ -1,12 +1,8 @@
 <section class=" bg-img">
-
     <section class="container shadow bg-light px-3 py-5 mt-5 ">
-
         <h2 class="text-muted text-center">بِسْمِ ٱللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h2>
-
         <h3 class="my-5 text-muted">Read the Quran by surah :</h3>
         <hr>
-
         <div *ngFor="let item of allSurahsName" >
             <div [routerLink]="['/surahData',item.number]"  class="d-flex justify-content-between  pointer hover py-4 px-1 mb-2">
                 <div>

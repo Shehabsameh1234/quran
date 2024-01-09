@@ -7,9 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class JuzDataService {
-
   constructor(private _HttpClient:HttpClient ) { }
-
   getJuzData(juzNumber:number): Observable<any>{
 return this._HttpClient.get(`https://api.alquran.cloud/v1/juz/${juzNumber}/ar.asad`)
   }

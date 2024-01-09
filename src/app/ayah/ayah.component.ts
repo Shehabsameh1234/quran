@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { GetAyahService } from '../get-ayah.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-
-
 @Component({
   selector: 'app-ayah',
   templateUrl: './ayah.component.html',
@@ -34,7 +32,6 @@ export class AyahComponent {
         this.surahNameInArabic = res.data.surah.name
         this.surahNameInEnglish = res.data.surah.englishName
         this.surahNumber = res.data.surah.number
-       
       },
       error: (error) => { console.log(error) },
     })
@@ -48,7 +45,6 @@ export class AyahComponent {
     ayahNumber: new FormControl(null, [Validators.required])
   })
   getAyah(getAyahForm1: FormGroup) {
-
     this._GetAyahService.getAyah(getAyahForm1.value.surahNumber, getAyahForm1.value.ayahNumber).subscribe({
       next: (res) => {
         this.ayahText = res.data.text
@@ -59,7 +55,6 @@ export class AyahComponent {
         this.audio = res.data.number
         this.audioSources = [`https://cdn.islamic.network/quran/audio/128/ar.alafasy/${res.data.number}.mp3`]
         this.changeAudioSource()
-
       },
       error: (error) => { console.log(error) },
     })

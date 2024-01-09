@@ -6,10 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class GetSurahService {
-
-
   constructor(private _HttpClient: HttpClient) { }
-
   getSurah(): Observable<any> {
     return this._HttpClient.get(`https://api.alquran.cloud/v1/surah`)
   }
