@@ -19,13 +19,131 @@ export class AyahComponent {
   surahNameInEnglish: string = "Al-Baqara"
   surahNumber: number = 2
   audio: number = 262
+   surahNamesArabi:string[] = [
+    "الفاتحة",
+    "البقرة",
+    "آل عمران",
+    "النساء",
+    "المائدة",
+    "الأنعام",
+    "الأعراف",
+    "الأنفال",
+    "التوبة",
+    "يونس",
+    "هود",
+    "يوسف",
+    "الرعد",
+    "إبراهيم",
+    "الحجر",
+    "النحل",
+    "الإسراء",
+    "الكهف",
+    "مريم",
+    "طه",
+    "الأنبياء",
+    "الحج",
+    "المؤمنون",
+    "النّور",
+    "الفرقان",
+    "الشعراء",
+    "النّمل",
+    "القصص",
+    "العنكبوت",
+    "الرّوم",
+    "لقمان",
+    "السجدة",
+    "الأحزاب",
+    "سبأ",
+    "فاطر",
+    "يس",
+    "الصافات",
+    "ص",
+    "الزمر",
+    "غافر",
+    "فصّلت",
+    "الشورى",
+    "الزخرف",
+    "الدّخان",
+    "الجاثية",
+    "الأحقاف",
+    "محمد",
+    "الفتح",
+    "الحجرات",
+    "ق",
+    "الذاريات",
+    "الطور",
+    "النجم",
+    "القمر",
+    "الرحمن",
+    "الواقعة",
+    "الحديد",
+    "المجادلة",
+    "الحشر",
+    "الممتحنة",
+    "الصف",
+    "الجمعة",
+    "المنافقون",
+    "التغابن",
+    "الطلاق",
+    "التحريم",
+    "الملك",
+    "القلم",
+    "الحاقة",
+    "المعارج",
+    "نوح",
+    "الجن",
+    "المزّمّل",
+    "المدّثر",
+    "القيامة",
+    "الإنسان",
+    "المرسلات",
+    "النبأ",
+    "النازعات",
+    "عبس",
+    "التكوير",
+    "الإنفطار",
+    "المطفّفين",
+    "الإنشقاق",
+    "البروج",
+    "الطارق",
+    "الأعلى",
+    "الغاشية",
+    "الفجر",
+    "البلد",
+    "الشمس",
+    "الليل",
+    "الضحى",
+    "الشرح",
+    "التين",
+    "العلق",
+    "القدر",
+    "البينة",
+    "الزلزلة",
+    "العاديات",
+    "القارعة",
+    "التكاثر",
+    "العصر",
+    "الهمزة",
+    "الفيل",
+    "قريش",
+    "الماعون",
+    "الكوثر",
+    "الكافرون",
+    "النصر",
+    "المسد",
+    "الإخلاص",
+    "الفلق",
+    "الناس"
+  ];
+  
+
   constructor(private _GetAyahService: GetAyahService, private _ActivatedRoute: ActivatedRoute) {
   }
   ngOnInit(): void {
     if (this.AyahNumberFroApi == undefined) { this.AyahNumberFroApi = 262 }
     this.audioSources = [`https://cdn.islamic.network/quran/audio/128/ar.alafasy/${this.AyahNumberFroApi}.mp3`]
     this.changeAudioSource()
-    this._GetAyahService.getAyah(this.surahNumberForApi,this.ayahNmberInSurahFroApi).subscribe({
+    this._GetAyahService.getAyah(this.surahNumberForApi, this.ayahNmberInSurahFroApi).subscribe({
       next: (res) => {
         this.ayahText = res.data.text
         this.numberOfAyah = res.data.numberInSurah
@@ -41,9 +159,10 @@ export class AyahComponent {
     this.currentSource = this.audioSources[0];
   }
   getAyahForm: FormGroup = new FormGroup({
-    surahNumber: new FormControl(null, [Validators.required]),
+    surahNumber: new FormControl(115, [Validators.required]),
     ayahNumber: new FormControl(null, [Validators.required])
   })
+
   getAyah(getAyahForm1: FormGroup) {
     this._GetAyahService.getAyah(getAyahForm1.value.surahNumber, getAyahForm1.value.ayahNumber).subscribe({
       next: (res) => {
