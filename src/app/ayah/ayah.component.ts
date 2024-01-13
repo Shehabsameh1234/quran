@@ -151,7 +151,7 @@ export class AyahComponent {
         this.surahNameInEnglish = res.data.surah.englishName
         this.surahNumber = res.data.surah.number
       },
-      error: (error) => { console.log(error) },
+      error: (error) => {alert(error.message) },
     })
 
   }
@@ -175,7 +175,7 @@ export class AyahComponent {
         this.audioSources = [`https://cdn.islamic.network/quran/audio/128/ar.alafasy/${res.data.number}.mp3`]
         this.changeAudioSource()
       },
-      error: (error) => { console.log(error) },
+      error: (error) => { alert(error.message) },
     })
   }
 

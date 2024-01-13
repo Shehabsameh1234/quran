@@ -27,7 +27,7 @@ export class JuzDataComponent {
           this.ayahAudio = `https://cdn.islamic.network/quran/audio/64/ar.alafasy/${res.data.ayahs[this.i].number}.mp3`
         },
         error: (error) => {
-          console.log(error);
+          alert(error.message);
         }
       }
     )

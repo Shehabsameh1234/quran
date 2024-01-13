@@ -31,7 +31,7 @@ export class SurahDataComponent {
         // this.ayahAudio = res.data.ayahs[this.i].audio
         this.ayahAudio=[`https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/${this.ayahNumberForApi}.mp3`]
       },
-      error: (error) => {
+      error: (error) => {alert(error.message)
       },
     })
 

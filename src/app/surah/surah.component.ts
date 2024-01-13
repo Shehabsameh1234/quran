@@ -19,7 +19,7 @@ export class SurahComponent {
       next: (res) => {
         this.allSurahsName = res.data
       },
-      error: (error) => { console.log(error) }
+      error: (error) => { alert(error.message) }
     })
   }
 }
