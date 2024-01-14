@@ -40,7 +40,7 @@ export class JuzDataComponent {
         {
           next: (res) => {
             this.ayahAudio = `https://cdn.islamic.network/quran/audio/64/ar.alafasy/${res.data.ayahs[this.i].number}.mp3`
-            if (this.i == res.data.ayahs.length - 1) { this.i = -1 }
+            if (this.i == res.data.ayahs.length - 1) { this.i = -1  }
             this.autoplayEnabled=true
           },
           error: (error) => {

@@ -8,7 +8,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class GetAyahService {
   constructor(private _HttpClient:HttpClient ) { }
-  getAyah(surahNumber:number,ayahNumber:number): Observable<any> {
+  getAyah(surahNumber:number=2,ayahNumber:number=255): Observable<any> {
     return this._HttpClient.get(`https://api.alquran.cloud/v1/ayah/${surahNumber}:${ayahNumber}/ar.asad`)
   }
 }

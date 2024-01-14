@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { GetAyahService } from '../get-ayah.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import {AyahNAmeAndNumber}from '../ayah-name-and-number'
 @Component({
   selector: 'app-ayah',
   templateUrl: './ayah.component.html',
@@ -14,12 +15,12 @@ export class AyahComponent {
   audioSources: string[] = ['https://cdn.islamic.network/quran/audio/128/ar.alafasy/262.mp3']; // Add your audio sources here
   currentSource: string = this.audioSources[0];
   ayahText: string = `اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ`
-  numberOfAyah: number = 255
+  numberOfAyah!: number 
   surahNameInArabic: string = "سُورَةُ البَقَرَةِ"
   surahNameInEnglish: string = "Al-Baqara"
-  surahNumber: number = 2
+  surahNumber!: number ;
   audio: number = 262
-   surahNamesArabi:any[] = [
+   surahNamesArabi:AyahNAmeAndNumber[] = [
     { name: 'الفاتحة', numberOfAyahs: 7 },
   { name: 'البقرة', numberOfAyahs: 286 },
   { name: 'آل عمران', numberOfAyahs: 200 },
@@ -137,7 +138,7 @@ export class AyahComponent {
   ];
   
 
-  constructor(private _GetAyahService: GetAyahService, private _ActivatedRoute: ActivatedRoute) {
+  constructor(private _GetAyahService: GetAyahService, private _ActivatedRoute: ActivatedRoute ) {
   }
   ngOnInit(): void {
     if (this.AyahNumberFroApi == undefined) { this.AyahNumberFroApi = 262 }
